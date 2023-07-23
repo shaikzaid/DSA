@@ -10,11 +10,11 @@ public class BalancedBrackets {
       String str= scn.nextLine();
       Stack<Character> st=new Stack<>();
 
-      for(int i= 0 ; i<str.length();i++) {
+      for(int i= 0 ; i<str.length();i++) {  
           char ch = str.charAt(i);
           if(ch == '(' || ch == '{'||ch=='['){
               st.push(ch);
-          }else if (ch == ')'){
+          }else if (ch == ')'){               // we can make method which takes stack and type of bracket and give us true or false 
               if(st.size() == 0){
                   System.out.println(false);
               }
