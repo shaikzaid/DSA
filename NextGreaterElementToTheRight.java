@@ -6,17 +6,18 @@ import java.util.Stack;
 public class NextGreaterElementToTheRight {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        System.out.println("enter number of elements")
+        System.out.println("enter number of elements");
         int n= scn.nextInt();
         int[] n1= new int[n];
-
         for(int i=0;i<n1.length;i++){
             n1[i]=scn.nextInt();
         }
         int[] m1=new int[n1.length];
-        m1[m1.length-1]=-1;
+
         Stack<Integer> st= new Stack<>();
-        for(int i= 0;i<n1.length-2;i++){
+        st.push(n1[n1.length-1]);
+        m1[m1.length-1]=-1;
+        for(int i= n1.length-2;i>=0;i--){
             while(st.size() != 0 && st.peek() <= n1[i]){
                 st.pop();
             }
@@ -28,5 +29,9 @@ public class NextGreaterElementToTheRight {
             }
             st.push(n1[i]);
         }
+        for(int i=0;i<m1.length;i++){
+            System.out.println(m1[i]);
+        }
     }
 }
+
